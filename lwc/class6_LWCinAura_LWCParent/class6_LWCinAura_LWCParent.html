@@ -1,0 +1,127 @@
+<!--<template>
+    <div>
+        <lightning-card title="Parent_Child_LWC_Aura">
+        <lightning-layout vertical-align="spread">
+            <lightning-layout-item  padding="around-large">
+                <div class=" slds-grid slds-wrap">
+                    <div class="slds-col slds-size_1-of-1"> 
+                        <p><lightning-input label="Name" value ={conName} onchange ={changedValue} ></lightning-input></p></div>            
+                    <div class="slds-col slds-size_1-of-1">
+                        <p> <lightning-button label = "Search" onclick ={getClicking} ></lightning-button></p></div> 
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                <div class=" slds-grid slds-wrap">              
+                    <template for:each={gettingContacts} for:item="cont">
+                        <div key={cont.Id} class="slds-col slds-size_2-of-12"> 
+                        <span><c-class6_child-lwc  contactsgetting = {cont}
+                        onselectedcontact={showselected} ></c-class6_child-lwc></span> </div>
+                    </template>
+                </div>
+                </lightning-layout-item>
+                <lightning-layout-item>
+                <template if:true={selectedContact}>
+                    <p><lightning-formatted-phone value={selectedContact.Phone}></lightning-formatted-phone></p>
+                    <p>  <lightning-formatted-text value={selectedContact.LastName}></lightning-formatted-text> </p>
+                </template>
+            </lightning-layout-item> 
+            <br></br>   
+               
+        </lightning-layout>
+        <lightning-layout>
+        <lightning-layout-item padding="slds-align_absolute-center">
+          
+        </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    </div>
+</template>-->
+
+<template> 
+    <lightning-card title="Parent_Child_LWC_Aura" style="text-align: center;" >        
+        <div class="c-container">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="12">
+                    <div class="page-section page-header" >
+                        <h2 style="font: bold; background-color: maroon; font-size: large; text-align: center;">LWC_Parent_Child_Aura</h2>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item padding="around-small" size="12">
+                    <lightning-layout>
+                        <lightning-layout-item padding="around-small" size="3">
+                            <div class="page-section page-right">
+                                <h2>Search Contact</h2>
+                                
+                                <div class=" slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_1-of-1"> 
+                                        <p><lightning-input label="Name" value ={conName} onchange ={changedValue} ></lightning-input></p></div>            
+                                    <div class="slds-col slds-size_1-of-1">
+                                        <p><lightning-button label = "Search" onclick ={getClicking} ></lightning-button></p></div> 
+                                </div>
+                            
+                            </div>
+                        </lightning-layout-item>
+                        <template if:true={gettingContacts}>
+                        <lightning-layout-item padding="around-small" size="6">
+                            <div class="page-section page-main">
+                                <h2 style="font: bold;">Contacts</h2>
+                                
+                                    <div class=" slds-grid slds-wrap slds-grid slds-gutters">              
+                                        <template for:each={gettingContacts} for:item="cont">
+                                            <div key={cont.Id} class="slds-col slds-size_4-of-12"> 
+                                            <span><c-class6_child-lwc  contactsgetting = {cont}
+                                            onselectedcontact={showselected} ></c-class6_child-lwc></span> </div>
+                                        </template>
+                                    </div>
+                                    </div>
+                                
+                            </div>
+                        </lightning-layout-item>
+                    </template>
+                        <template if:true={selectedContact}>
+                        <lightning-layout-item padding="around-small" size="3">
+                            <div class="page-section page-right">
+                                <h2 >Selected Contact</h2>
+                                <div class="slds-p-around_x-medium">
+                                    <ul>
+                                        <template if:true={selectedContact}>
+                                        <div class="slds-p-around_medium">
+                                                <lightning-card title={selectedContact.LastName}>
+                                                        <div class="slds-grid slds-grid_vertical slds-p-around_large ">
+                                                            <div class="slds-col">
+                                                              <span><lightning-formatted-phone value={selectedContact.Phone}></lightning-formatted-phone></span>
+                                                            </div>
+                                                            <div class="slds-col">
+                                                              <span><lightning-formatted-text value={selectedContact.LastName}></lightning-formatted-text></span>
+                                                            </div>
+                                                            <div class="slds-col">
+                                                              <span><lightning-formatted-text value={selectedContact.Id}></lightning-formatted-text></span>
+                                                            </div>
+                                                            <div class="slds-col">
+                                                                <span><lightning-formatted-text value={selectedContact.LeadSource}></lightning-formatted-text></span>
+                                                              </div>  
+                                                            <div class="slds-col">
+                                                                <span><lightning-combobox name="progress" label="Lead Source" value={value}
+                                                                    placeholder={selectedContact.LeadSource} options={pickListValue} >
+                                                                      </lightning-combobox></span>
+                                                              </div>
+                                                          </div>
+                                                </lightning-card>
+                                            </div> 
+                                        </template>
+                                    </ul>
+                                </div>
+                            </div>
+                        </lightning-layout-item></template>
+                    </lightning-layout>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                    <div class="page-footer page-section">
+                       <template if:true={selectedContact}>  <h2> Go To Contact :  <a href="JavaScript:void(0)" onclick={goContact}>      
+                            {selectedContact.LastName}</a> </h2> </template>            
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>        
+    </lightning-card>
+</template>

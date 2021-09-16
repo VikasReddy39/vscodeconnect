@@ -1,0 +1,20 @@
+<template>
+    <div class="slds-p-around_small">
+        <h2 style="text-align: center; font: bold; font-style: oblique;">Opportunity</h2>
+        <lightning-card title="Opportunity" icon-name="standard:opportunity">            
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-p-around_medium">
+                <div class="slds-col">
+                    <span>Name: <a href="JavaScript:void(0)" onclick={goOppDetail}> {opplist.Name} </a></span>
+                </div>
+                <div class="slds-col">
+                    <span>Stage: <lightning-formatted-phone label="Stage" value={opplist.StageName}></lightning-formatted-phone></span>
+                </div>
+                <div class="slds-col">
+                    <span>Amount: <lightning-formatted-number value={opplist.Amount} format-style="currency" currency-code="USD">                        
+                    </lightning-formatted-number></span>
+                </div></div>
+            </div>      
+        </lightning-card>
+    </div>
+</template>

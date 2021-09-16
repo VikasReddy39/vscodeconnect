@@ -1,0 +1,20 @@
+<template>
+<lightning-card  title="IfandElse" icon-name="custom:custom27">
+    <lightning-layout vertical-align="around-medium">
+        <lightning-layout-item padding="around-small">
+            {welcome} &nbsp; 
+            {appMessage}
+        </lightning-layout-item>    
+        <template if:true={appMessage}>
+            <lightning-layout-item>
+           &nbsp; <p>  Hey Buddy !! :-) </p>
+            </lightning-layout-item>
+        </template>
+        <template if:false={nope}>
+            <lightning-layout-item>
+            <br>nope</br>
+            </lightning-layout-item>
+        </template>
+        </lightning-layout>
+</lightning-card>
+</template>

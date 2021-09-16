@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="SearchRecordUsingParams" icon-name="custom:custom7">
+        <lightning-layout vertical-align="aroun-medium">
+        <lightning-layout-item padding="around-small">
+            <lightning-input value={searchname} label="Name" onchange={handlechange}></lightning-input>
+        </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout vertical-align="around-small" >
+        <template for:each={contacts} for:item="contact" for:index="index"> 
+            <lightning-layout-item key={contact.key} padding="around-small">
+                <lightning-card title={index}>
+                <p> {contact.LastName}</p><br>
+               <P> <lightning-formatted-phone value={contact.Phone}></lightning-formatted-phone></P><br>
+            </lightning-card>
+            </lightning-layout-item>
+        </template>
+        </lightning-layout>
+    </lightning-card>
+</template>

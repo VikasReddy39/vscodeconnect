@@ -1,0 +1,29 @@
+<template>
+    
+    <lightning-card title="ImperativeMethodVaraiablePass" icon-name="custom:custom7" >
+        <lightning-layout horizontal-align="around-small">
+        <lightning-layout-item padding="around-large">
+            <lightning-input value={inputname} label="Name" onchange={searchName}></lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-button label="Search" onclick={handleClick}></lightning-button>
+        </lightning-layout-item>
+        </lightning-layout>
+        <div style="background-color: rgb(69, 57, 77);" class="slds-p-around_none slds-col slds-size_1-of-3">
+            <lightning-layout vertical-align="around-small">                
+                <template for:each={contacts} for:item ="contact">                      
+                    <c-class4_call-componentfrom-other key={contact.Id} contactchild={contact} ></c-class4_call-componentfrom-other>                                       
+                   <!-- <lightning-layout-item padding="around-medium" key ={contact.key}>                
+                        <lightning-card>
+                            <p><lightning-formatted-text value ={contact.LastName}></lightning-formatted-text></p>
+                            <p><lightning-formatted-phone value={contact.Phone}></lightning-formatted-phone></p>
+                        </lightning-card>            
+                    </lightning-layout-item>
+             <lightning-layout-item>
+                <c-class4_call-componentfrom-other></c-class4_call-componentfrom-other>
+            </lightning-layout-item>    -->                 
+                </template>           
+            </lightning-layout> 
+        </div>       
+    </lightning-card>
+</template>

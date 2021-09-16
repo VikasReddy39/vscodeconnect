@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_week_Deployments</fullName>
+    <columns>NAME</columns>
+    <columns>CI_Build_Artifactories_Version_ID__c</columns>
+    <columns>Deployment_done_by__c</columns>
+    <columns>Deployment_Requested_Date__c</columns>
+    <columns>Deployment_Status__c</columns>
+    <columns>Deployed_Environment__c</columns>
+    <columns>Deployment_Effort_in_Man_Hours__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>CREATED_DATE</field>
+        <operation>equals</operation>
+        <value>THIS_WEEK</value>
+    </filters>
+    <label>This week Deployments</label>
+</ListView>

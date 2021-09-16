@@ -1,0 +1,71 @@
+<template>   
+    <div style="background-color: darkolivegreen;" >
+        <lightning-card title="uiRecordApi"  >
+            <div class="slds-clearfix">
+                <div class="slds-float_right">
+                    <lightning-icon icon-name="utility:notification" alternative-text="notification" 
+                                    size="medium" title="Contacts" onclick={showNotification}>
+                    </lightning-icon>                    
+                </div>
+              </div>                       
+            <div class="slds-grid slds-wrap slds-grid  slds-gutters">
+                <div class="slds-col slds-size_3-of-12" >  
+                    <lightning-card title="uiRecordApi_getRecord" icon-name="standard:account">
+                        <template if:true={accountRec.data}>
+                            <div class="slds-grid slds-wrap slds-p-around_medium" style="background-color: chocolate;">
+                                <div class="slds-col slds-size_1-of-1">
+                                    Name : <lightning-formatted-text value={names}></lightning-formatted-text><br></div>
+                                <div class="slds-col slds-size_1-of-1">
+                                    Phone : <lightning-formatted-phone value={phone}></lightning-formatted-phone><br></div>
+                                <div class="slds-col slds-size_1-of-1">                                
+                                <lightning-formatted-text value={industry} ></lightning-formatted-text><br></div> 
+                            </div>                                                             
+                        </template>
+                    </lightning-card>
+                </div>
+                <div class="slds-col slds-size_3-of-12">
+                    <lightning-card title="uiRecordApi_getRecordFields" icon-name="standard:account">
+                        <div class="slds-grid slds-wrap slds-p-around_medium">
+                            <div class="slds-col slds-size_1-of-1">
+                                NumberOfEmployees : <lightning-formatted-number value={NumberOfEmployees} ></lightning-formatted-number></div>
+                            <div class="slds-col slds-size_1-of-1">
+                                CreatedById : <lightning-formatted-url label="User" value={CreatedById}></lightning-formatted-url></div>
+                            <div class="slds-col slds-size_1-of-1">
+                                Rating : <lightning-formatted-text value={rating} ></lightning-formatted-text></div>
+                        </div>                                                
+                    </lightning-card> 
+                </div>
+                <div class="slds-col slds-size_3-of-12" >  
+                    <lightning-card title="uiRecordApi_CreateRecord" icon-name="standard:account" >
+                        <template if:true={accountRec.data}>
+                            <div class="slds-grid slds-wrap slds-p-around_small" >
+                                <div class=" slds-col slds-size_6-of-12">
+                                    <lightning-input label="Name" value={accName} onchange={handleChane}></lightning-input></div>
+                                <div class="slds-col slds-size_6-of-12">
+                                    <lightning-input label="Phone" value={accPhone} onchange={handleChane1}></lightning-input></div>
+                                <div class="slds-col slds-size_6-of-12" >
+                                    <lightning-input label="Rating" value={accRating} onchange={handleChane2}></lightning-input></div>
+                                <div class="slds-col slds-size_6-of-12">
+                                    <lightning-combobox name="progress" label="Status" value={value}
+                                                        placeholder="Select Progress" options={pickListValue}
+                                                        onchange={handleChane2} >
+                                    </lightning-combobox></div>
+                                <div class="slds-grid slds-wrap slds-p-around_small slds-col slds-size_1-of-1">
+                                    <lightning-button label="Save" onclick={createAccRec} 
+                                    icon-name="utility:save" icon-position="right" variant="brand"></lightning-button>
+                                </div>
+                            </div>                                  
+                        </template>
+                    </lightning-card>
+                </div>
+                <div class="slds-col slds-size_3-of-12" >  
+                    <lightning-card title="UiRecordApi_Delete" icon-name="standard:account">
+                        <div class="slds-grid slds-wrap slds-p-around_large slds-col slds-size_1-of-1">
+                            <lightning-button label="Delete" icon-name="utility:delete" icon-position="right" 
+                            onclick={recordDeletion} variant="destructive"></lightning-button></div>
+                    </lightning-card>    
+                </div>                
+            </div>                          
+        </lightning-card>
+    </div>
+</template>

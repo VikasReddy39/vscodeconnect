@@ -1,0 +1,16 @@
+<template>
+    <div class="slds-p-around_medium">
+        <h2 style="text-align: center; font: bold; font-style: oblique;">Contact</h2>
+        <lightning-card title="Contact" icon-name="standard:contact" >
+            <div class="slds-grid slds-grid_vertical">
+                <div class="slds-p-around_medium">
+                <div class="slds-col">
+                <span>Name:<a href="JavaScript:void(0)" onclick={goContactDetail}> {conlist.LastName} </a></span>
+                </div>
+                <div class="slds-col">
+                    <span>Phone:<lightning-formatted-phone value={conlist.Phone}></lightning-formatted-phone></span>
+                </div>
+            </div> </div>   
+        </lightning-card>
+    </div>
+</template>

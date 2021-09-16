@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="ForandIterationLoop" icon-name="custom:custom18">
+        <lightning-layout vertical-align="around-medium">
+            <lightning-layout-item padding="around-small">
+                <template for:each={contacts} for:item="item" for:index="index">
+                    <p key = {contacts.Id}>
+                        {index} --  {item.Id}  {item.name} </br>
+                    </p>                    
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

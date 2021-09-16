@@ -1,0 +1,40 @@
+<template>
+    <lightning-card style="color: brown;" title="Lightning-Record-Edit-Form">        
+        <div class="slds-grid slds-wrap slds-p-around_x-small" title="Lightning-Record-Edit-Form" >        
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-card title="Lightning Record Edit Form_CreateRecord" icon-name="standard:Account">
+                    <lightning-record-edit-form object-api-name={objectApiName} onsuccess={handleSuccess}>
+                        <div style="color :rgb(221, 220, 255); background-color: grey;" class="slds-m-around_medium">
+                            <lightning-input-field field-name='Phone'></lightning-input-field>
+                            <lightning-input-field field-name='Name'></lightning-input-field>
+                            <lightning-input-field field-name='Rating'></lightning-input-field>
+                            <lightning-input-field field-name='AccountSource'></lightning-input-field>
+                            <lightning-input-field field-name='Contact'></lightning-input-field>
+                            <div class="slds-m-top_medium">
+                                <lightning-button variant="brand" type="submit" name="save" label="Create Account">
+                                </lightning-button>
+                            </div>
+                        </div>
+                    </lightning-record-edit-form>        
+                </lightning-card>
+            </div>
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-card  title="Lightning Record Edit Form_UpdateRecord" icon-name="standard:Account">
+                    <lightning-record-edit-form record-id={recordId} object-api-name={objectApiName} onsuccess={handleUpdate}>
+                        <div style="color:rgb(8, 6, 1)" class="slds-m-around_medium">
+                            <lightning-input-field field-name='Phone'></lightning-input-field>
+                            <lightning-input-field field-name='Name'></lightning-input-field>
+                            <lightning-input-field field-name='Rating'></lightning-input-field>
+                            <lightning-input-field field-name='AccountSource'></lightning-input-field>
+                            <lightning-input-field field-name='Contact'></lightning-input-field>
+                            <div class="slds-m-top_medium">
+                                <lightning-button variant="brand" type="submit" name="update" label="Update">
+                                </lightning-button>
+                        </div>
+                    </div>
+                    </lightning-record-edit-form>        
+                </lightning-card>
+            </div>
+        </div>
+    </lightning-card>
+</template>

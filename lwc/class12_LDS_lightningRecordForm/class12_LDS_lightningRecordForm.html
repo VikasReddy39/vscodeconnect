@@ -1,0 +1,40 @@
+<template>
+    <lightning-card title="Lightning-Record-Form">
+        <div class="slds-grid slds-wrap">
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-card title="Lightning Record Form_Readonly" icon-name="standard:account">
+                    <lightning-record-form
+                        record-id={recordId}
+                        object-api-name={objectApiName}
+                        layout-type="Full"
+                        columns="2"
+                        mode="readonly">
+                    </lightning-record-form>
+                </lightning-card>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-card title="Lightning Record Form_View" icon-name="standard:account">
+                    <lightning-record-form
+                        record-id={recordId}
+                        object-api-name={objectApiName}
+                        layout-type="Full"
+                        columns="2"
+                        mode="view">
+                    </lightning-record-form>
+                </lightning-card>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <lightning-card title="Lightning Record Form_Edit" icon-name="standard:account">
+                    <lightning-record-form
+                        record-id={recordId}
+                        object-api-name={objectApiName}
+                        layout-type="Full"
+                        columns="2"
+                        mode="edit"
+                        onsubmit={handleSuccess}>
+                    </lightning-record-form>
+                </lightning-card>
+            </div>
+        </div>
+    </lightning-card>
+</template>

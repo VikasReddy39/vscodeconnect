@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Designation__c</fullName>
+    <externalId>false</externalId>
+    <label>Designation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>--- Select one ---</fullName>
+                <default>false</default>
+                <label>--- Select one ---</label>
+            </value>
+            <value>
+                <fullName>Program Trainee</fullName>
+                <default>false</default>
+                <label>Program Trainee</label>
+            </value>
+            <value>
+                <fullName>Program Developer</fullName>
+                <default>false</default>
+                <label>Program Developer</label>
+            </value>
+            <value>
+                <fullName>Senior Developer</fullName>
+                <default>false</default>
+                <label>Senior Developer</label>
+            </value>
+            <value>
+                <fullName>Architect</fullName>
+                <default>false</default>
+                <label>Architect</label>
+            </value>
+            <value>
+                <fullName>Technical Manager</fullName>
+                <default>false</default>
+                <label>Technical Manager</label>
+            </value>
+            <value>
+                <fullName>Customer Success Manager</fullName>
+                <default>false</default>
+                <label>Customer Success Manager</label>
+            </value>
+            <value>
+                <fullName>Delivery Manager</fullName>
+                <default>false</default>
+                <label>Delivery Manager</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

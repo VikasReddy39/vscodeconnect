@@ -1,0 +1,12 @@
+<template>
+    <c-event-check-child onsendnameevent ={getName}></c-event-check-child>
+    <template if:true={gettingAccount}>
+        <template for:each={gettingAccount} for:item="acc" >
+            <div key={acc.Id} class="slds-p-around_none slds-grid slds-wrap ">
+                <p><lightning-formatted-text value={acc.Name}></lightning-formatted-text></p>            
+                <p><lightning-formatted-phone value={acc.Phone}></lightning-formatted-phone></p>
+                <p><lightning-formatted-text value={acc.Id}></lightning-formatted-text></p>            
+            </div>
+    </template>       
+    </template>
+</template>

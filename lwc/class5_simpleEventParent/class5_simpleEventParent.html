@@ -1,0 +1,15 @@
+<template>    
+    <lightning-card title="Parent_Child_Event" icon-name="custom:custom19">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small">
+                <template if:true={intNum}>
+                        {intNum} <br>
+                </template>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <c-class5_simple-event-child onnext={handleNextPar}
+                            onprevious={handlepreviousPar}></c-class5_simple-event-child>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>    
+</template>

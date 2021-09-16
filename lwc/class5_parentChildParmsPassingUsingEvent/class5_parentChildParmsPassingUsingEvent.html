@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="EventParmsPassing" icon-name="custom:custom7" >
+        <lightning-layout horizontal-align="around-small">
+        <lightning-layout-item padding="around-large">
+            <lightning-input value={contactAssign} label="Name" onchange={searchName}>                
+            </lightning-input>
+        </lightning-layout-item>
+        <lightning-layout-item>
+            <lightning-button label="Search" onclick={handleClick}></lightning-button>
+        </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout vertical-align="around-small">                      
+            <template for:each={contacts} for:item ="contact">                 
+                
+
+            <!--    <c-class5_parent-child-params-passing-child oneventparam={handleEventParam} key={contact.Id} contactchild={contact}>                    
+                </c-class5_parent-child-params-passing-child>
+            in above component we are displaying only the names of the contacts
+                once the name of the contact select we will display the complete details
+            -->            
+            </template>  
+            <lightning-layout-item>
+                <template if:true={selectedcontact}>
+                    <lightning-formatted-text value={selectedcontact.LastName}></lightning-formatted-text>
+                    <lightning-formatted-phone value={selectedcontact.Phone}></lightning-formatted-phone>
+                </template>
+            </lightning-layout-item>          
+            </lightning-layout>        
+    </lightning-card>
+</template>

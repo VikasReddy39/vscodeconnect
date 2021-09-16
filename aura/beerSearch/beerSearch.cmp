@@ -1,0 +1,5 @@
+<aura:component >
+    <!-- sending value via component event to parent-->
+    <aura:registerEvent name="searchEvent" type="c:searchBeerName"/>
+    <lightning:input  name="enter-search"  type="search" onchange="{!c.handleChange}" aura:id="enterValue"/>
+</aura:component>

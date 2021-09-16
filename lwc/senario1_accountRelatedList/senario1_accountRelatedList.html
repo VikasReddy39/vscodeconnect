@@ -1,0 +1,123 @@
+<template>
+    <lightning-card title="Account Releated List" icon-name="standard:account" >
+        <div class="c-container">
+            <lightning-layout multiple-rows="true">
+                <lightning-layout-item padding="around-small" size="12">
+                    <div class="page-section page-header">
+                        <div style="margin: auto; width: 15%; padding: 1px;"> 
+                            <h2 style=" width: 150px; height: 25px; text-align: center; font:bolder; font-size:large; border-style: double; border-width: 0.5px; 
+                                             border-color: #fc4b15; border-radius: 12px; font-family: Impact, Charcoal, sans-serif;">Account Page</h2></div>
+                    </div>
+                </lightning-layout-item>                
+                <div class="center">
+                    <div class= "slds-p-around_medium slds-grid slds-grid_vertical-align-end slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <lightning-input type="search"  value={accName} onchange={handleNamechange}> </lightning-input>
+                    </div>
+                    <div class="slds-col">
+                        <lightning-button label="Search" onclick={searchAcc}></lightning-button>
+                    </div>
+                    </div>
+                </div>                
+                <lightning-layout-item padding="around-small" size="12">
+                    <lightning-layout>
+                        <template if:true={accList}>
+                            <lightning-layout-item padding="around-small" size="3">
+                                <div class="page-section page-right">
+                                    <div style="margin: auto; width: 45%; padding: 1px; "> 
+                                        <h2 style="width: 100px; height: 20px; text-align: center; font:bold; border-style: dotted double;
+                                        border-width: 0.5px; border-color: #30e90b; border-radius: 12px; float: center;">Accounts</h2></div>
+                                        <div class=" slds-grid slds-wrap slds-grid slds-gutters">
+                                            <template for:each ={accList} for:item="accountsList"> 
+                                                <div key={accountsList.Id} class="slds-col slds-size_6-of-12">                                    
+                                                    <span><c-senario1_account-list-show accountsgetting={accountsList}
+                                                    onselectedcontact={getSelectedId} ></c-senario1_account-list-show></span>
+                                                </div>                                                
+                                            </template>  
+                                        </div> 
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                    <template if:true={boolVisible}>
+                        <template if:true={selectedId}>
+                            <lightning-layout-item padding="around-small" size="5">
+                                <div class="page-section page-main">
+                                    <div style="margin: auto; width: 30%;padding: 10px;"> 
+                                        <h2 style="width: 150px; height: 20px;text-align: center; font:bold; border-style: solid; border-width: 0.5px; 
+                                                            border-color: blue; border-radius: 12px;">Account Details</h2> 
+                                    </div>                                    
+                                    <div class="slds-clearfix">
+                                        <div class="slds-float_right">
+                                            <div class="slds-dropdown-trigger slds-dropdown-trigger_click">
+                                                <lightning-icon icon-name="utility:notification" alternative-text="notification" variant="bare"
+                                                                size="medium" title="ReleatedLists" onclick={showNotification} >                                                                                                                                                               
+                                                </lightning-icon> 
+                                                <template if:true={selectedId}>
+                                                    <span aria-hidden="true" class="slds-notification-badge slds-incoming-notification 
+                                                    slds-show-notification">{totlen}</span>
+                                                </template>
+                                            </div>
+                                        </div>
+                                    </div> 
+                                                                                           
+                                    <template if:true={selectedId}>
+                                        <lightning-record-form
+                                                    record-id={selectedId}
+                                                    object-api-name="Account"
+                                                    layout-type="Full"
+                                                    columns="2"
+                                                    mode="view">
+                                        </lightning-record-form>
+                                        <div class="slds-p-around_x-large">
+                                            <div class="slds-grid">
+                                                <div class="slds-col slds-align-top">
+                                                    <span><a href="JavaScript:void(0)" onclick={displayContacts}>Contacts</a></span>
+                                                </div>
+                                                <div class="slds-col slds-align-middle">
+                                                    <span><a href="JavaScript:void(0)" onclick={displayOpps}>Opportunities</a></span>
+                                                </div>
+                                                <div class="slds-col slds-align-bottom">
+                                                    <span><a href="JavaScript:void(0)" onclick={displayRelatedList}>Related</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                    </template>     
+                    <template if:true={boolVisible2}>
+                        <template if:true={selectedId}>
+                            <lightning-layout-item padding="around-small" size="4">
+                                <div class="page-section page-right">
+                                    <div style="margin: auto; width: 45%; padding: 1px;"> 
+                                        <h2 style="width: 150px; height: 20px;text-align: center; font:bold; border-style: groove; border-width: 0.5px; 
+                                                        border-color: rgb(255, 174, 0); border-radius: 12px;">Related List</h2></div>
+                                        <template if:true={boolVisible3}>
+                                            <div class="slds-grid slds-wrap">                                        
+                                                <template for:each={selectedContact} for:item="contact">
+                                                    <div class="slds-col slds-size_6-of-12" key={contact.Id}>
+                                                    <span> <c-scenario1-contact-list conlist={contact}></c-scenario1-contact-list> </span>
+                                                    </div>                                            
+                                                </template>
+                                            </div>
+                                    </template>
+                                    <template if:true={boolVisible4}>
+                                        <div class="slds-grid slds-wrap">
+                                            <template for:each={oppotunityList} for:item="opportunity">
+                                                <div class="slds-col slds-size_6-of-12" key={opportunity.Id}>
+                                                    <c-senario1-opp-list opplist={opportunity}></c-senario1-opp-list>
+                                                </div>
+                                            </template>
+                                        </div>
+                                    </template>
+                                </div>
+                            </lightning-layout-item>
+                        </template>
+                    </template>
+                    </lightning-layout>
+                </lightning-layout-item>                
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

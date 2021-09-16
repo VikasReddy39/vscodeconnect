@@ -1,0 +1,22 @@
+<template>
+<lightning-card title="Sample Card" variant="narrow"
+icon-name="custom:custom23" >
+<lightning-layout vertical-align="center">
+<lightning-layout-item padding="around-small">
+    <lightning-formatted-text value={name}></lightning-formatted-text>            
+</lightning-layout-item>
+<lightning-layout-item padding="around-small">
+    <lightning-formatted-phone value={phone}></lightning-formatted-phone>
+</lightning-layout-item>
+<lightning-layout-item padding="around-small">
+    <lightning-formatted-email value= {email}></lightning-formatted-email>
+</lightning-layout-item>
+<lightning-layout-item>
+    <lightning-button label="JS" variant="brand" onclick={calljs} ></lightning-button>
+</lightning-layout-item>
+<lightning-layout-item padding="around-small">
+<lightning-formatted-text value= {userId}></lightning-formatted-text>
+</lightning-layout-item>
+</lightning-layout>
+</lightning-card>
+</template>

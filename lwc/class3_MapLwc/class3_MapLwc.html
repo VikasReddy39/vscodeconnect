@@ -1,0 +1,17 @@
+<template>
+   <lightning-card title="MapLwcfromClass" icon-name="custom:custom9" >
+       <lightning-layout vertical-align="around-small">
+           <lightning-layout-item padding="around-medium">
+               <template if:true={records}>
+                   I have values
+               </template>
+           </lightning-layout-item>
+           <lightning-button label="Contacts" onclick={contactsclass}></lightning-button>
+       <lightning-layout-item>
+           <template for:each= {maps} for:item ="items" for:index ="index" >
+                {index} --- {items.key} --- {items.value} &nbsp; {items.value.phone} 
+           </template>
+       </lightning-layout-item>
+       </lightning-layout>
+   </lightning-card> 
+</template>

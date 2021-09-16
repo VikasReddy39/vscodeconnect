@@ -1,0 +1,30 @@
+<template>
+    <lightning-card  title="Navigation Items" icon-name="custom:custom7" >
+        <lightning-layout vertical-align="stretch" multiple-rows="true">
+            <lightning-layout-item flexibility="auto" padding="around-small" size="3" >
+                <lightning-button name ="Case Object" label="CaseList" onclick={navigateToObjectHome}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" size="3" >
+                <lightning-button label ="ContactList" variant="brand" onclick={navigateToListView}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" size="3" >
+                <lightning-button label ="AccountCreate" onclick={navigateToNewRecordPage}></lightning-button>
+            </lightning-layout-item> </br>
+            <lightning-layout-item flexibility="auto" padding="around-small" size="3" >
+                <lightning-button label ="ViewContact" variant="brand" onclick={navigateToRecordViewPage}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" size="3" >
+                <lightning-button label ="EditContact"  onclick={navigateToRecordEditPage}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" size="3" >
+                <lightning-button label ="AccountReleated" variant="brand" onclick={navigateToRelatedList}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" size="3" >
+                <lightning-button label ="LWC"  onclick={navigateToTabPage}></lightning-button>
+            </lightning-layout-item>
+            <lightning-layout-item flexibility="auto" padding="around-small" size="3" >
+                <lightning-button label ="Help" variant="brand" onclick={navigateToWebPage}></lightning-button>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+</template>

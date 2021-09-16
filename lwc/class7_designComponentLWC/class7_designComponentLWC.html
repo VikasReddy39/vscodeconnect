@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Design Attributes" icon-name="custom:custom64">
+        <lightning-layout horizontal-align="center">
+            <lightning-layout-item>
+                {greetings}<br>
+            </lightning-layout-item>
+            <lightning-layout-item>
+                {message}
+            </lightning-layout-item>
+            <lightning-layout-item>
+                {label.CONTACT_OBJECT}
+            </lightning-layout-item>
+            <lightning-layout-item>
+                {label.NAME_FIELD}
+            </lightning-layout-item>
+            <lightning-layout-item>
+                {label.lang}
+            </lightning-layout-item>
+            <lightning-layout-item>
+                {label.locale}
+            </lightning-layout-item>
+            <lightning-layout-item>
+                {label.currency}
+            </lightning-layout-item>
+            <lightning-layout-item>
+                {label.timezone}
+            </lightning-layout-item>
+            <p>                
+                    <lightning-formatted-text value={label.customLabel}></lightning-formatted-text>                                
+            </p>
+            <div>
+                <p>
+                    <img src={label.Salesforce}/>
+                </p>
+            </div>
+            <p>                
+                    {label.userId}                                
+            </p>
+        </lightning-layout>
+    </lightning-card>
+</template>

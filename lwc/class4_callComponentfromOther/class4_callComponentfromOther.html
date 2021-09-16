@@ -1,0 +1,19 @@
+<template>
+    
+    <div class ="slds-var-p-around_medium" style="height:10px;" >
+        <div class="slds-grid slds-wrap">
+    <lightning-card title="Hey I'm in child" icon-name="custom:custom3" >
+        <lightning-layout vertical-align="around-small">
+            <lightning-layout-item padding="center"> 
+                <p>
+                    <lightning-formatted-phone value={contactchild.Phone}></lightning-formatted-phone>
+                </p>               
+                <p>
+                    <lightning-formatted-text value={contactchild.LastName}></lightning-formatted-text>                               
+                </p>                    
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    </div></div>
+</div>
+</template>

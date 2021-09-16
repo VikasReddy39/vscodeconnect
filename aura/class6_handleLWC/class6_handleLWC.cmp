@@ -1,0 +1,6 @@
+<aura:component implements="flexipage:availableForAllPageTypes" access="global" >
+<aura:attribute name="test"  type="string"/>
+<p>Hey I'm in Aura component</p> {!v.test}
+<c:class6_LWCinAura_LWCParent/>
+<c:class5_simpleEventChild onnext="{!c.handleNext}" onprevious="{!c.handlePrevious}"></c:class5_simpleEventChild>
+</aura:component>

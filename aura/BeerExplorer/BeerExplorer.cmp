@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <!--handle searchEvent-->
+    <aura:handler name="searchEvent" event="c:searchBeerName" action="{!c.getBeerValue}"/>
+    <div class="slds-p-around_medium">
+        <c:HeaderComponent header="Beer Search" message="Life is too short to drink beer" alternativeText="Beer Explorer"/>
+    </div>
+    <div class="slds-p-around_large">
+        <c:beerSearch/>
+    </div>
+</aura:component>

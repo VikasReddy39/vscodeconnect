@@ -1,0 +1,23 @@
+<template>
+    <div class="slds-p-around_medium ">
+        <lightning-card title="ParentEventHandler" >
+            <lightning-layout vertical-align="small">
+                <lightning-layout-item>
+                    <c-class5_event-child onselected={handleChildEvent}></c-class5_event-child> </br>  
+                </lightning-layout-item>
+            </lightning-layout>
+            <lightning-layout>
+                <lightning-layout-item padding="xxx-small">
+                    <div class="slds-grid slds-gutters slds-col slds-size_2-of-3">
+                        <template for:each={contacts} for:item="contact">
+                            <lightning-card key={contact.Id} title="ConList">
+                                <lightning-formatted-text value={contact.LastName}></lightning-formatted-text>                            
+                                <lightning-formatted-phone value={contact.Phone}></lightning-formatted-phone>
+                            </lightning-card>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </lightning-card>
+    </div>
+</template>
