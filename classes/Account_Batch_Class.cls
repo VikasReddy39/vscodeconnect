@@ -1,7 +1,7 @@
 global class Account_Batch_Class implements database.Batchable<sobject>,database.stateful {
     global integer count;
     global list<id> errids = new list<id>();
-    global list<id> sucids = new list<id>();
+    global list<id> sucids = new list<id>();//cm1
     global Account_Batch_Class()
     {
         count = 0;
